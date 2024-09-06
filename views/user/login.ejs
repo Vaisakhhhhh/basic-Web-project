@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:  #0A0A0A;
+            margin: 0;
+            padding: 0;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        div {
+            width: 300px;
+            padding: 20px;
+            background: #0A0A0A;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid  #08FF5C;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #08FF5C;
+        }
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color:#B9BCC0 ;
+            font-weight: bold;
+            background-color: #1C1C1C;
+        }
+        
+        input[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #08FF5C;
+            color: #0A0A0A;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h5 {
+            margin-top: 20px;
+            color:#B9BCC0;
+        }
+        h5 a {
+            color:  #08FF5C;
+            text-decoration: none;
+        }
+        h5 a:hover {
+            text-decoration: underline;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <form action="/login" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <p><%= errorMessage%></p>
+            
+            <input type="submit" value="Sign in">
+        </form>
+        <h5>Don't have an account? <a href="/">Signup</a></h5>
+    </div>
+    
+</body>
+</html>
